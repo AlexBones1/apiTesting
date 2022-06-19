@@ -22,7 +22,7 @@ class TestUserAuth(BaseCase):
         response2 = requests.get(
             'https://playground.learnqa.ru/api/user/auth',
             headers={"x-csrf-token": self.token},
-            cookies={"auth_sid": self.auth_sid},
+            cookies={"auth_sid": self.auth_sid}
         )
 
         self.user_id_from_check_method = self.get_json_value(response2, "user_id")
